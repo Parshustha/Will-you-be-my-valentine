@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will you be my Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #ff9a9e, #fecfef);
+      font-family: system-ui, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+    button {
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .yes {
+      background: #ff4b5c;
+      color: white;
+    }
+    .no {
+      background: white;
+      color: #ff4b5c;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine, my love?</h1>
+
+  <div class="buttons">
+    <button class="yes" onclick="showMessage()">Yes 💖</button>
+    <button id="noBtn" class="no">No 🙈</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    // Make the No button run away
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    // Final message when Yes is clicked
+    function showMessage() {
+      window.location.href = "final.html";
+    }
+  </script>
+
+</body>
+</html>
